@@ -1,0 +1,21 @@
+~/goblint/analyzer/goblint -I include -I src/include -I src/internal -I obj/include -I arch/generic -I arch/x86_64/ --enable allfuns src/aio/*.c
+TODO: subdirs?
+
+complex : ok after removing imaginary literals (_Complex_I)
+env : fixpoint not reached; src/env/__environ.c:4: CIL only supports attribute((alias)) for functions.
+exit : name warning; keeping the one at src/exit/atexit.c:19.; exception Cil.SizeOfError("abstract type", _)
+fcntl: src/fcntl/openat.c:19: Error: src/fcntl/openat.c:19: alias unsupported with varargs.
+legacy: About to crash on src/legacy/err.c:20 Fatal error: exception Cil.SizeOfError("abstract type", _)
+locale: Fatal error: exception Stack overflow
+malloc: name warning
+misc: CIL alias warning
+mman: src/mman/mremap.c:32: Error: src/mman/mremap.c:32: alias unsupported with varargs.
+network: src/network/if_nameindex.c:96: Error: Length of array is not a constant: ctx->num + 1U; -> replaced with 0
+process: warning: Variable-sized local variable ..
+search: C99: variable-length arrays
+setjmp: only assembly
+signal: CIL alias warning
+stdio: src/stdio/wscanf.c:15: Error: src/stdio/wscanf.c:15: alias unsupported with varargs.
+stdlib: Warning: Incompatible declaration for ..
+thread: syntax error in include/unistd.h[175:6-19]: long syscall(long, ...);
+time: Declaration of .. does not match; CIL alias warning
