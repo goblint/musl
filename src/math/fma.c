@@ -41,7 +41,6 @@ static void mul(uint64_t *hi, uint64_t *lo, uint64_t x, uint64_t y)
 
 double fma(double x, double y, double z)
 {
-	#pragma STDC FENV_ACCESS ON
 
 	/* normalize so top 10bits and last bit are 0 */
 	struct num nx, ny, nz;

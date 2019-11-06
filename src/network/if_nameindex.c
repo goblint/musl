@@ -93,7 +93,7 @@ struct if_nameindex *if_nameindex()
 	memset(ctx, 0, sizeof(*ctx));
 	if (__rtnetlink_enumerate(AF_UNSPEC, AF_INET, netlink_msg_to_nameindex, ctx) < 0) goto err;
 
-	ifs = malloc(sizeof(struct if_nameindex[ctx->num+1]) + ctx->str_bytes);
+	ifs = malloc(sizeof(struct if_nameindex[0+1]) + ctx->str_bytes);
 	if (!ifs) goto err;
 
 	p = (char*)(ifs + ctx->num + 1);

@@ -29,10 +29,11 @@
 #endif
 
 #if __STDC_VERSION__ >= 201112L
+#define _Noreturn __attribute__((__noreturn__))
 #elif defined(__GNUC__)
 #define _Noreturn __attribute__((__noreturn__))
 #else
-#define _Noreturn
+#define _Noreturn __attribute__((__noreturn__))
 #endif
 
 #endif

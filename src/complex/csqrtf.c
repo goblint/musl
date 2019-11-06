@@ -34,7 +34,6 @@
  * gcc generates is acceptable, since the special cases have already been
  * handled.
  */
-#pragma STDC CX_LIMITED_RANGE ON
 
 float complex csqrtf(float complex z)
 {

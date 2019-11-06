@@ -1,0 +1,11 @@
+~/goblint/analyzer/goblint -I include -I src/include -I src/internal -I obj/include -I arch/generic -I arch/x86_64/ --enable allfuns src/aio/*.c
+
+src/complex : ok after removing imaginary literals (_Complex_I)
+src/env : fixpoint not reached; src/env/__environ.c:4: CIL only supports attribute((alias)) for functions.
+src/exit : name warning; keeping the one at src/exit/atexit.c:19.; exception Cil.SizeOfError("abstract type", _)
+fcntl: src/fcntl/openat.c:19: Error: src/fcntl/openat.c:19: alias unsupported with varargs.
+legacy: About to crash on src/legacy/err.c:20 Fatal error: exception Cil.SizeOfError("abstract type", _)
+locale: Fatal error: exception Stack overflow
+malloc: name warning
+misc: CIL alias warning
+mman: src/mman/mremap.c:32: Error: src/mman/mremap.c:32: alias unsupported with varargs.
